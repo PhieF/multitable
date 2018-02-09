@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html style="
+height: 100%;
+">
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+  </head>
+  <style>
+      body{
+          overflow: hidden;
+          margin:0px;
+        width:100%;
+      height:100%;
+      }
+      #webviews{
+        width:100%;
+      height:100%;  
+      }
+      #tabs-container{
+          height: 30px;
+          -webkit-app-region: drag;
+
+      }
+      #tabs{
+          display:inline-block;
+      }
+      .tab{
+          display:inline-block;
+          padding: 10px;
+          padding-top: 7px;
+
+          -webkit-app-region: no-drag;
+          cursor: pointer;
+
+      }
+  .webview{
+      width:100%;
+      height:calc(100% - 30px);
+  } 
+  #window-options img{
+      padding:5px;
+  }
+  #window-options{
+      position:absolute;
+      top:0px;
+      right:0px;
+  }
+  #add-dialog{
+	  display:none;
+	  box-shadow: 0px 0px 5px black;
+	  background:white;
+	  position:fixed;
+	  top : 30px;
+	  left:50%;
+	  width:300px;
+	  margin-left:-150px;
+	  padding:5px;
+  }
+  #add-dialog .button-area{
+	  text-align:right;
+  }
+  </style>
+  <body>
+      <div id="tabs-container">
+      <div id="tabs">
+
+      </div>
+      <img style="padding-top:3px; position:absolute; cursor: pointer; -webkit-app-region: no-drag;" src="img/ic_add_black_24px.svg" onclick="add()"/>
+      <div id="window-options">
+            <img style="cursor: pointer; -webkit-app-region: no-drag;" src="img/ic_close_black_24px.svg" onclick="closeWindow()"/>
+        </div>
+    </div>
+      <div id="webviews">
+
+      </div>
+      <div id="add-dialog">
+		  Add new webview
+		  <br />
+		  <br />
+		  <span class="label">Name</span><br />
+		  <input id="name" type="text" />
+		  <br />
+		   <br />
+		  <span class="label">Url</span><br />
+		  <input id="url" type="text" /><br />
+		  <br />
+		  <div class="button-area">
+		  <button onclick="dismissDialog()">Cancel</button>
+		  <button onclick="addWebview()">OK</button>
+		  </div>
+      </div>
+      <script src="jquery.min.js" ></script>
+      
+      <script src="index.js" ></script>
+  </body>
+</html>
